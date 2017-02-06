@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>texte tapé comme une secrétaire !</title>
+	<style>
+		#secretary_text {
+			width: 700px;
+			height: 120px;
+			font-size: 15px;
+			background-color: #000;
+			color: #FFF;
+			padding: 4px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="secretary_text">
+		
+	</div>
+
+	<script>
+		var myText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
+		
+
+		var myArray = myText.split("");
+
+		var timeLooper;
+
+		function loop() {
+			if (myArray.length > 0) {
+				document.getElementById("secretary_text").innerHTML += myArray.shift();
+			} else {
+				clearTimeout(timeLooper);
+			}
+			timeLooper = setTimeout('loop()', 70);
+		}
+		loop();
+	</script>
+
+
+</body>
+</html>
